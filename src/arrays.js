@@ -1,61 +1,80 @@
 const getNthElement = (index, array) => {
-  // your code here
+  const arrayLength = array.length;
+  const indexPosition = index % arrayLength;
+  return array[indexPosition];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.toString();
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
+  return undefined;
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  let arr2 = array.concat(element);
+  return arr2;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(String);
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(str => str.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  let str = strings.toString();
+  let reverse_arr = str.split(/([\s,.])/).map((item) => {
+      return item.split``.reverse().join``;}).map(String);
+  let newarr = reverse_arr.filter(a => a !== ',');
+  return newarr;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => {
+    return number % 2 ===0;
+  });
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const i = index;
+  const newArr = array.slice(0, i).concat(array.slice(i + 1, array.length));
+  return newArr;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  let rex = /^[aeiou]/i;
+  let results = strings.filter(str => rex.test(str));
+  return results;
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.replace(/\s+/g, '');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  let sumoOfNum = numbers.reduce((accumulator, value) => {
+    return accumulator + value;
+  }, 0);
+  return sumoOfNum;
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {
